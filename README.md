@@ -1,4 +1,4 @@
-# pyalgen - A minimal library for genetic algorithm in python
+## pyalgen - A minimal library for genetic algorithm in python
 
 ### Install
 ```bash
