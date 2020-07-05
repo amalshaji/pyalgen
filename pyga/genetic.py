@@ -1,5 +1,6 @@
 from tqdm import tqdm
 
+
 class GeneticAlgorithm:
     def __init__(self, population, objective_fn, selection, crossover) -> None:
         self.population = population
@@ -13,7 +14,7 @@ class GeneticAlgorithm:
 
         for i in tqdm(range(iterations), ncols=100):
             objective = self.objective_fn(*pop.T)
-            fitness = 1/(1+objective)
+            fitness = 1 / (1 + objective)
             pop = self.selection(self, pop, fitness)
             pop = self.crossover(self, pop, fitness)
             if (objective == 0).sum() >= 1:

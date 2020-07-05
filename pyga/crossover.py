@@ -1,6 +1,7 @@
 import random
 import numpy as np
 
+
 class Crossover:
     def __init__(self) -> None:
         pass
@@ -14,7 +15,10 @@ class Crossover:
                 indices.append(idx)
         for idx, val in enumerate(indices):
             cur_index = indices[idx]
-            nxt_index = indices[idx+1] if idx < len(indices)-1 else indices[0]
-            index = random.randint(0, len(population)-1)
-            population[cur_index, index:], population[nxt_index, index:] = population[nxt_index, index:], population[cur_index, index:]
+            nxt_index = indices[idx + 1] if idx < len(indices) - 1 else indices[0]
+            index = random.randint(0, len(population) - 1)
+            population[cur_index, index:], population[nxt_index, index:] = (
+                population[nxt_index, index:],
+                population[cur_index, index:],
+            )
         return population

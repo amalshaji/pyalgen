@@ -1,6 +1,7 @@
 import random
 import numpy as np
 
+
 class Population:
     """
     Class to generate population to the Genetic Algorithm
@@ -14,7 +15,8 @@ class Population:
         unique: if selected `int`, unique makes sure each chromosome created has unique values in it
     Returns: None
     """
-    def __init__(self, low, high, dtype='int', dist=None, unique=False) -> None:
+
+    def __init__(self, low, high, dtype="int", dist=None, unique=False) -> None:
         super().__init__()
         self.unique = unique
         self.dtype = dtype
@@ -32,18 +34,20 @@ class Population:
         Returns: population in numpy.ndarray
         """
         params = (self.low, self.high, (pop_size, variables))
-        assert self.dtype in ['int', 'float']
+        assert self.dtype in ["int", "float"]
         if self.dist is not None:
-            assert self.dist in ['normal', 'uniform']
-        if self.dtype == 'int':
+            assert self.dist in ["normal", "uniform"]
+        if self.dtype == "int":
             if self.unique:
-                sample = set(range(self.low, self.high+1))
-                unique_nums = [random.sample(sample, variables) for _ in range(pop_size)]
+                sample = set(range(self.low, self.high + 1))
+                unique_nums = [
+                    random.sample(sample, variables) for _ in range(pop_size)
+                ]
                 return np.array(unique_nums)
             else:
                 return np.random.randint(*params)
         else:
-            if self.dist == 'uniform':
+            if self.dist == "uniform":
                 return np.random.uniform(*params)
             else:
                 return np.random.normal(*params)
