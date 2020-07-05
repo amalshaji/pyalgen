@@ -24,7 +24,7 @@ population = pop(pop_size=1000, variables=2)
 # pop_size is the population size of each generation
 ```
 <p align="center">
-<img src="images/matyas.jpg"></img>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Matyas_function.pdf/page1-1200px-Matyas_function.pdf.jpg" height=300></img>
 <br>
 Matyas function
 </p>
@@ -65,7 +65,7 @@ min_value: 7.719286052427051e-07, solution: [-0.00447918 -0.00410235], generatio
 
 Let's solve the equation,
 <p align="center">
-<img src="images/eq.svg"></img>
+<img src="https://latex.codecogs.com/svg.latex?a%20+%202*b%20+%203*c%20+%204*d%20=%2030"></img>
 </p>
 
 ##### Complete code
