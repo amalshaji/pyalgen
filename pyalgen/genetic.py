@@ -12,14 +12,13 @@ class GeneticAlgorithm:
     def forward(self, iterations):
         objective, pop = None, None
         pop = self.population
-
+        i = None
         for i in tqdm(range(iterations), ncols=100):
             objective = self.objective_fn(*pop.T)
-            # print(objective)
-            fitness = 1 / (1 + objective)
+            if (objective == 0).sum() >= 1:
+                break
+            fitness = 1 / objective
             pop = self.selection(pop, fitness)
             pop = self.crossover(pop, fitness)
             pop = self.mutation(pop, low=np.min(self.population), high=np.max(self.population), dtype=self.population[-1][-1].dtype)
-            if (objective == 0).sum() >= 1:
-                break
-        return iterations, objective, pop
+        return i+1, objective, pop

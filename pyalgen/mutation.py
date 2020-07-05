@@ -9,6 +9,8 @@ class Mutation:
         total_mutations = int(mr*len(pop))
         if dtype == 'float':
             dtype = 'float'
+        elif dtype == 'int64':
+            dtype = 'int'
         values = {
             'int': np.random.randint(low, high, (total_mutations)),
             'float': np.random.uniform(low, high, (total_mutations))
