@@ -7,7 +7,7 @@ class Selection:
         pass
 
     @staticmethod
-    def Tournament(self, population, fitness, tournament_size=2):
+    def Tournament(population, fitness, tournament_size=2):
         new_pop = []
         number_of_tournaments = len(population)
         for _ in range(number_of_tournaments):

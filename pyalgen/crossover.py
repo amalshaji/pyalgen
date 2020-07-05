@@ -7,7 +7,7 @@ class Crossover:
         pass
 
     @staticmethod
-    def onepoint(self, population, fitness, cr=0.25):
+    def onepoint(population, fitness, cr=0.25):
         indices = []
         random_numbers = np.random.uniform(0, 1, (len(population)))
         for idx, val in enumerate(random_numbers):

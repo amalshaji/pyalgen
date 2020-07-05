@@ -53,4 +53,7 @@ class Population:
                 return np.random.normal(*params)
 
     def __call__(self, pop_size, variables):
+        """
+        call the forward function automatically
+        """
         return self.forward(pop_size, variables)
