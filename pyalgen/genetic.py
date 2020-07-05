@@ -21,4 +21,4 @@ class GeneticAlgorithm:
             pop = self.selection(pop, fitness)
             pop = self.crossover(pop, fitness)
             pop = self.mutation(pop, low=np.min(self.population), high=np.max(self.population), dtype=self.population[-1][-1].dtype)
-        return i+1, objective, pop
+        return i, objective, pop
