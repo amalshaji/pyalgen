@@ -99,7 +99,7 @@ GeneticAlgorithm breaks the computation, if any of the chromosome reached out ob
 ### Result
 ```bash
   1%|▋                                                           | 11/1000 [00:00<00:05, 171.30it/s]
-min_value: 0, solution: [11  4  1  2], generation: 12
+min_value: 0, solution: [11  4  1  2], generation: 11
 ```
-One of our chromosome reached a solution during generation: `11`
+The algorithm reached a solution during generation: `11`
 Solution: a = `11`, b = `4`, c = `1`, d = `2`
