@@ -21,7 +21,7 @@ class Selection:
 
     @staticmethod
     def roulette(population, fitness):
-        probs = fitness/np.sum(fitness)
+        probs = fitness / np.sum(fitness)
         cumsum = np.cumsum(probs)
         new_index = []
         for _ in range(len(population)):

@@ -5,3 +5,4 @@ dist/
 pyalgen.egg-info/
 Makefile
 test.py
+.idea/
