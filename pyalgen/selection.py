@@ -18,3 +18,16 @@ class Selection:
             else:
                 new_pop.append(population[y])
         return np.array(new_pop)
+
+    @staticmethod
+    def roulette(population, fitness):
+        probs = fitness/np.sum(fitness)
+        cumsum = np.cumsum(probs)
+        new_index = []
+        for _ in range(len(population)):
+            for idx, val in enumerate(fitness):
+                r = random.random()
+                if r < val:
+                    new_index.append(idx)
+
+        return population[new_index]
