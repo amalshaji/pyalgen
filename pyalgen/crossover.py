@@ -22,3 +22,7 @@ class Crossover:
                 population[cur_index, index:],
             )
         return population
+
+    @staticmethod
+    def clone(population, fitness):
+        return population
