@@ -4,3 +4,4 @@ build/
 dist/
 pyalgen.egg-info/
 Makefile
+test.py
