@@ -25,9 +25,15 @@ class Selection:
         cumsum = np.cumsum(probs)
         new_index = []
         for _ in range(len(population)):
-            for idx, val in enumerate(fitness):
-                r = random.random()
-                if r < val:
-                    new_index.append(idx)
+            # for idx, val in enumerate(fitness):
+            #     r = random.random()
+            #     if r < val:
+            #         new_index.append(idx)
+            cs_list = list(cumsum)
+            r = random.random()
+            cs_list.append(r)
+            cs_list.sort()
+            new_index.append(cs_list.index(r))
+
 
         return population[new_index]
