@@ -45,7 +45,7 @@ ga = pyalgen.GeneticAlgorithm(population, tf.matyas, selection, crossover, mutat
 ```python
 iterations, objective, pop = ga.forward(iterations=200)
 # iterations is the number of generations to run for
-print(f'min_value: {objective.min()}, solution: {pop[objective.argmin()]}, generation: {iterations}')
+print(f'objective: {objective.min()}, solution: {pop[objective.argmin()]}, generation: {iterations}')
 # print the minimum objective and the chromosome in population which 
 # given minimum objective 
 ```
@@ -53,7 +53,7 @@ print(f'min_value: {objective.min()}, solution: {pop[objective.argmin()]}, gener
 6. Check the result
 ```bash
 100%|██████████████████████████████████████████████████████████| 1000/1000 [00:03<00:00, 262.55it/s]
-min_value: 7.719286052427051e-07, solution: [-0.00447918 -0.00410235], generation: 1000
+objective: 7.719286052427051e-07, solution: [-0.00447918 -0.00410235], generation: 1000
 # global minimum of matyas is at f(0, 0) = 0
 # our algorithm gives minimum, f(-0.004, -0.004) = 7.7e-07
 # which is pretty close 
@@ -86,20 +86,20 @@ def obj(a, b, c, d): # objective function
 ga = pyalgen.GeneticAlgorithm(population, obj, selection, crossover, mutation)
 
 
-iterations, objective, pop = ga.forward(iterations=1000)
+iterations, objective, pop = ga.forward(iterations=50)
 
 if iterations == 1000:
-    print(f'min_value: {objective.min()}, \
+    print(f'objective: {objective.min()}, \
         solution: {pop[objective.argmin()]}, generation: {iterations}')   
 else:
-    print(f'min_value: {objective[objective == 0][0]},\
+    print(f'objective: {objective[objective == 0][0]},\
          solution: {pop[objective == 0][0]}, generation: {iterations}')   
 ```
 GeneticAlgorithm breaks the computation, if any of the chromosome reached out objective, i.e, `0`
 ### Result
 ```bash
-  1%|▋                                                           | 11/1000 [00:00<00:05, 171.30it/s]
-min_value: 0, solution: [11  4  1  2], generation: 11
+ 40%|████████████████████████▊                                     | 20/50 [00:00<00:00, 509.30it/s]
+objective: 0, solution: [4 6 2 2], generation: 20
 ```
 The algorithm reached a solution during generation: `11`
 Solution: a = `11`, b = `4`, c = `1`, d = `2`
